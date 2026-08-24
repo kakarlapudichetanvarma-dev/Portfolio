@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { portfolioData } from '../data/portfolioData'
-import { Menu, X, Terminal, ArrowUpRight } from 'lucide-react'
+import { Menu, X, ArrowUpRight } from 'lucide-react'
 import { GithubIcon, LinkedinIcon } from './Icons'
 
 export default function Navbar() {
@@ -27,24 +27,35 @@ export default function Navbar() {
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'border-b border-border/80 bg-bg/85 backdrop-blur-md shadow-lg shadow-black/20'
-          : 'border-b border-border-soft/60 bg-bg/60 backdrop-blur-sm'
+          ? 'bg-bg/85 backdrop-blur-md shadow-lg shadow-black/30'
+          : 'bg-bg/40 backdrop-blur-sm'
       }`}
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3.5">
-        {/* Brand */}
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-2.5 sm:py-3">
+        {/* Brand with High-Definition Custom Logo */}
         <a
           href="#"
-          className="group flex items-center gap-2.5 font-mono text-sm font-semibold tracking-wider text-text transition-colors"
+          className="group flex items-center gap-3.5 font-mono tracking-wider text-text transition-colors"
         >
-          <div className="flex h-7 w-7 items-center justify-center rounded border border-green/30 bg-green/10 text-green group-hover:border-green/60">
-            <Terminal className="h-4 w-4" />
+          <div className="relative flex items-center justify-center">
+            {/* Ambient subtle green neon background glow */}
+            <div className="absolute -inset-1 rounded-xl bg-green/20 blur-md opacity-75 group-hover:opacity-100 transition-opacity"></div>
+            <img
+              src="/logo.jpg"
+              alt="Chetan Varma Logo"
+              className="relative h-12 w-12 sm:h-14 sm:w-14 rounded-xl border-2 border-green/60 object-cover object-top shadow-[0_0_20px_rgba(62,207,110,0.35)] transition-all duration-300 group-hover:scale-105 group-hover:border-green group-hover:shadow-[0_0_25px_rgba(62,207,110,0.6)]"
+              style={{ imageRendering: 'auto' }}
+            />
           </div>
-          <span className="flex items-center gap-1.5">
-            <span className="font-bold">CHETAN</span>
-            <span className="text-green">.</span>
-            <span className="text-muted text-xs font-normal">VARMA</span>
-          </span>
+          <div className="flex flex-col">
+            <span className="flex items-center gap-1 text-base sm:text-lg font-bold tracking-tight text-text group-hover:text-white transition-colors">
+              <span>CHETAN VARMA</span>
+              <span className="text-green font-bold">.</span>
+            </span>
+            <span className="text-[11px] font-mono text-green/90 tracking-widest uppercase -mt-0.5 font-semibold">
+              BACKEND // DISTRIBUTED
+            </span>
+          </div>
         </a>
 
         {/* Desktop Nav */}

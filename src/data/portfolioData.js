@@ -10,7 +10,7 @@ export const portfolioData = {
     systemStatus: "PROD_READY // ALL SYSTEMS NOMINAL",
     email: "kakarlapudichetanvarma@gmail.com",
     github: "https://github.com/kakarlapudichetanvarma-dev",
-    linkedin: "https://linkedin.com/in/chetan-varma",
+    linkedin: "https://www.linkedin.com/in/chetan-varma-a239182a4",
     resumeUrl: "#contact", // or link to PDF in public folder
   },
 
