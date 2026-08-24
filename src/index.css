@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --color-bg: #0A0C10;
+  --color-bg-secondary: #0E1218;
+  --color-panel: #121720;
+  --color-panel-hover: #171E2B;
+  --color-panel-elevated: #1A2230;
+  --color-border: #232C3B;
+  --color-border-soft: #1B222E;
+  --color-green: #3ECF6E;
+  --color-green-glow: rgba(62, 207, 110, 0.15);
+  --color-amber: #F5A623;
+  --color-blue: #3B82F6;
+  --color-red: #EF4444;
+  --color-text: #E8EDF5;
+  --color-muted: #8A99AD;
+  --color-muted-dim: #4D5B6E;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Subtle background grid pattern for backend engineering depth */
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Radial ambient lighting */
+.bg-radial-glow {
+  background: radial-gradient(circle at 50% 0%, rgba(62, 207, 110, 0.08) 0%, transparent 60%);
+}
+
+.bg-radial-card {
+  background: radial-gradient(circle at 100% 0%, rgba(62, 207, 110, 0.04) 0%, transparent 50%);
+}
+
+/* Custom sleek scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-muted-dim);
+}
+
+/* Pulse badge animation */
+@keyframes subtle-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.08); }
+}
+
+.animate-subtle-pulse {
+  animation: subtle-pulse 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
